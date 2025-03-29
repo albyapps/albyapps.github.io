@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRS - BookNavigator</title>
+</head>
+<body>
+<h1 id="-software-requirements-specification-srs-document-"><strong>Software Requirements Specification (SRS) Document</strong></h1>
+<p><strong>Document Title:</strong> Book Navigation Simplifier<br><strong>Version:</strong> 1.0<br><strong>Date:</strong> Mar 29 2025<br><strong>Author:</strong> Anil  </p>
+<hr>
+<h2 id="-1-introduction-"><strong>1. Introduction</strong></h2>
+<h3 id="-1-1-purpose-"><strong>1.1 Purpose</strong></h3>
+<p>This document outlines the requirements for a web-based software application designed to simplify navigation within digital books. The software will provide a dynamic popup menu that allows users to quickly jump to chapters, topics, and sub-topics without manually scrolling through the entire book.</p>
+<h3 id="-1-2-scope-"><strong>1.2 Scope</strong></h3>
+<p>The software will:  </p>
+<ul>
+<li>Load a book’s structured data (JSON format) from a server.  </li>
+<li>Display a dynamic, hierarchical popup menu for navigation.  </li>
+<li>Allow users to drill down into chapters → topics → sub-topics.  </li>
+<li>Automatically scroll to the selected section in the book.  </li>
+<li>Be developed using HTML, CSS, and JavaScript.  </li>
+</ul>
+<h3 id="-1-3-definitions-"><strong>1.3 Definitions</strong></h3>
+<ul>
+<li><strong>JSON:</strong> JavaScript Object Notation, a lightweight data format.  </li>
+<li><strong>Dynamic Popup Menu:</strong> A nested, expandable menu that appears on user interaction.  </li>
+<li><strong>Softcopy:</strong> Digital version of the book.  </li>
+</ul>
+<hr>
+<h2 id="-2-overall-description-"><strong>2. Overall Description</strong></h2>
+<h3 id="-2-1-product-perspective-"><strong>2.1 Product Perspective</strong></h3>
+<ul>
+<li>Standalone web application.  </li>
+<li>Works on modern browsers (Chrome, Firefox, Edge, Safari).  </li>
+<li>Requires a JSON-structured book file hosted on a server.  </li>
+</ul>
+<h3 id="-2-2-user-classes-"><strong>2.2 User Classes</strong></h3>
+<ul>
+<li><strong>Readers:</strong> Users who want quick access to specific sections of a book.  </li>
+<li><strong>Administrators:</strong> (Optional) Users who manage the book JSON structure.  </li>
+</ul>
+<h3 id="-2-3-operating-environment-"><strong>2.3 Operating Environment</strong></h3>
+<ul>
+<li>Browser-based (no backend required).  </li>
+<li>Responsive design for different screen sizes.  </li>
+</ul>
+<h3 id="-2-4-assumptions-dependencies-"><strong>2.4 Assumptions &amp; Dependencies</strong></h3>
+<ul>
+<li>The book content is available in a structured JSON format.  </li>
+<li>The JSON file follows a predefined schema (chapters → topics → sub-topics).  </li>
+</ul>
+<hr>
+<h2 id="-3-system-features-requirements-"><strong>3. System Features &amp; Requirements</strong></h2>
+<h3 id="-3-1-functional-requirements-"><strong>3.1 Functional Requirements</strong></h3>
+<table>
+<thead>
+<tr>
+<th><strong>ID</strong></th>
+<th><strong>Requirement</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR1</td>
+<td>Load Book Data</td>
+<td>The system shall fetch and parse the book’s JSON file from a server.</td>
+</tr>
+<tr>
+<td>FR2</td>
+<td>Dynamic Menu</td>
+<td>The system shall display a popup menu with expandable chapters, topics, and sub-topics.</td>
+</tr>
+<tr>
+<td>FR3</td>
+<td>Navigation</td>
+<td>When a user selects a sub-topic, the system shall scroll the UI to that section.</td>
+</tr>
+<tr>
+<td>FR4</td>
+<td>Responsive UI</td>
+<td>The menu and book content shall adapt to different screen sizes.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="-3-2-non-functional-requirements-"><strong>3.2 Non-Functional Requirements</strong></h3>
+<table>
+<thead>
+<tr>
+<th><strong>ID</strong></th>
+<th><strong>Requirement</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NFR1</td>
+<td>Performance</td>
+<td>The menu should load and respond within 1 second.</td>
+</tr>
+<tr>
+<td>NFR2</td>
+<td>Compatibility</td>
+<td>Works on Chrome, Firefox, Edge, and Safari.</td>
+</tr>
+<tr>
+<td>NFR3</td>
+<td>Usability</td>
+<td>Intuitive navigation with minimal clicks.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-4-external-interface-requirements-"><strong>4. External Interface Requirements</strong></h2>
+<h3 id="-4-1-user-interfaces-"><strong>4.1 User Interfaces</strong></h3>
+<ul>
+<li><strong>Main Page:</strong> Displays the book content.  </li>
+<li><strong>Popup Menu:</strong> Hierarchical menu (Chapters → Topics → Sub-Topics).  </li>
+</ul>
+<h3 id="-4-2-software-interfaces-"><strong>4.2 Software Interfaces</strong></h3>
+<ul>
+<li><strong>JSON File Structure Example:</strong>  <pre><code class="lang-json">{
+  <span class="hljs-attr">"chapters"</span>: [
+    {
+      <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Chapter 1"</span>,
+      <span class="hljs-attr">"topics"</span>: [
+        {
+          <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Topic 1.1"</span>,
+          <span class="hljs-attr">"subtopics"</span>: [<span class="hljs-string">"Subtopic 1.1.1"</span>, <span class="hljs-string">"Subtopic 1.1.2"</span>]
+        }
+      ]
+    }
+  ]
+}
+</code></pre>
+</li>
+</ul>
+<hr>
+<h2 id="-5-system-architecture-"><strong>5. System Architecture</strong></h2>
+<h3 id="-5-1-high-level-design-"><strong>5.1 High-Level Design</strong></h3>
+<ol>
+<li><strong>JSON Loader:</strong> Fetches and parses the book data.  </li>
+<li><strong>Menu Generator:</strong> Creates a nested popup menu.  </li>
+<li><strong>Content Renderer:</strong> Displays book content and handles scrolling.  </li>
+</ol>
+<h3 id="-5-2-technologies-"><strong>5.2 Technologies</strong></h3>
+<ul>
+<li><strong>Frontend:</strong> HTML5, CSS3, JavaScript (ES6+).  </li>
+<li><strong>No Backend Required</strong> (Static JSON file).  </li>
+</ul>
+<hr>
+<h2 id="-6-other-non-functional-requirements-"><strong>6. Other Non-Functional Requirements</strong></h2>
+<ul>
+<li><strong>Accessibility:</strong> Keyboard navigation support.  </li>
+<li><strong>Maintainability:</strong> Clean, modular code.  </li>
+</ul>
+<hr>
+<h2 id="-7-appendix-"><strong>7. Appendix</strong></h2>
+<h3 id="-7-1-sample-json-schema-"><strong>7.1 Sample JSON Schema</strong></h3>
+<p>(Refer to Section 4.2)  </p>
+<h3 id="-7-2-mockups-optional-"><strong>7.2 Mockups (Optional)</strong></h3>
+<ul>
+<li>A simple wireframe showing the popup menu and book content.  </li>
+</ul>
+<hr>
+<h3 id="-revision-history-"><strong>Revision History</strong></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Version</strong></th>
+<th><strong>Date</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>[Date]</td>
+<td>Initial Draft</td>
+</tr>
+</tbody>
+</table>
+<hr>
+
+</body>
+</html>
