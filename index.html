@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome!</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #a8dadc, #457b9d); /* Pleasing gradient */
+            color: #f1faee; /* Light text for contrast */
+            text-align: center;
+        }
+
+        header, main, footer {
+            padding: 20px;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.1); /* Slightly transparent header */
+        }
+
+        main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #e63946; /* Accent color */
+            color: #f1faee;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #d11a2a; /* Darker hover effect */
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.1);
+            font-size: 0.8em;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            p {
+                font-size: 1em;
+                padding: 0 10px;
+            }
+
+            .button {
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My Website</h1>
+    </header>
+
+    <main>
+        <h1>Welcome!</h1>
+        <p>Thanks for visiting my simple and responsive welcome page. I hope you enjoy your stay!</p>
+        <a href="#" class="button">Learn More</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
